@@ -3,27 +3,50 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NewApp.MainPage">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Button x:Name ="clickMeBtn"  Text= "Click Me!" Clicked="Handle_Clicked" />
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-        <Frame BackgroundColor="DarkRed" Padding="24" CornerRadius="0">
-            <Label Text="This Frame helps the app look more appealing!" HorizontalTextAlignment="Center" TextColor="White" />
-        </Frame>
-        <Button x:Name="resetBtn" Text="Reset Counter" Clicked="Handle_ResetClicked" />
-    </StackLayout>
-
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label x:Name="titleLbl"
+               Grid.Row="0"
+               Grid.Column="0"
+               Grid.ColumnSpan="3"
+               Text="I Filled the Entire Row!"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               BackgroundColor="DarkRed" 
+               FontSize="Title"
+               TextColor="White" />
+        <Label x:Name="fillerLbl"
+               Grid.Row="1"
+               Grid.Column="1"
+               Text="I have taken up one column in this row."
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               TextColor="BlueViolet" />
+        <Button x:Name="resetBtn"
+                Grid.Row="2"
+                Grid.Column="0"
+                Text="Reset Counter" 
+                Clicked="Handle_ResetClicked" />
+        <Button x:Name="fillBtn"
+                Grid.Row="2"
+                Grid.Column="1"
+                Text="Filler Button" />
+        <Button x:Name ="clickMeBtn"
+                Grid.Row="2"
+                Grid.Column="2"
+                Text= "Click Me!" 
+                Clicked="Handle_Clicked" />
+        
+    </Grid>
+    
+    
 </ContentPage>
